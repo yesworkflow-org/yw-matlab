@@ -1,8 +1,7 @@
 
 % load the execution object
-matlab_runs_dir = '/Users/tmcphill/Documents/MATLAB/dataone/provenance/runs/';
-execution_id = '12d51bae-256d-4124-85e4-971c376065dc';
-executionWorkspaceFile = [matlab_runs_dir execution_id '/' execution_id '.mat'];
+[run_parent_directory,run_id] = fileparts(pwd); 
+executionWorkspaceFile = [run_parent_directory '/' run_id '/' run_id '.mat'];
 load(executionWorkspaceFile);
 
 disp('Inputs:')
