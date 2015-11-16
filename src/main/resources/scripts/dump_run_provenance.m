@@ -27,7 +27,5 @@ function dump_run_provenance(run_dir)
         output_file_path = output_object.get('full_file_path');
         disp(['  - ' output_file_path]);
     end
-    
-    
 
 end
