@@ -22,7 +22,6 @@ printall('mq3(ProgramName) -  What are the names of the programs comprising the 
 printall('mq4(ProgramName) - What are the names of the programs in the top workflow that produce workflow outputs?', mq4(_)).
 printall('mq5(DataName) - What are the inputs to the top-level workflow?', mq5(_)).
 printall('mq6(DataName) - What data is output by program block C3_C4_map_present_NA.examine_pixels_for_grass?', mq6(_)).
-
 printall('mq7(ProgramName) - What program blocks provide input directly to C3_C4_map_present_NA.generate_netcdf_file_for_Grass_fraction?', mq7(_)).
 printall('mq8(ProgramName) - What programs have input ports that receive data C3_C4_map_present_NA[lon_variable]?', mq8(_)).
 printall('mq9(PortCount) - How many ports read data C3_C4_map_present_NA[lat_variable]?', mq9(_)).
@@ -38,7 +37,11 @@ printall('mq18(UpstreamDataName) - What data is upstream of SYNMAP_land_cover_ma
 printall('mq19(UriVariableName) - What URI variables are associated with reads of data C3_C4_map_present_NA[mean_airtemp]?', mq19(_)).
 printall('mq20(UpStreamDataName) - What URI variables do data read into mean_precip and mean_airtemp have in common?', mq20(_)).
 
+printall('rq1(InputFile) - What input files were used to compose the rain matrix?', rq1(_)).
+printall('rq2(InputCount) - How many input files were used to compose the air temparature matrix?', rq2(_)).
+printall('rq3(InputFile) - What input files provided the data used to derive the workflow output Grass_fraction_data?', rq3(_)).
+printall('rq4(StartYear, EndYear) - What is the range of years over which the data in the mean_precip input files were collected?', rq4(_,_)).
+printall('rq5(Month) - What months of the year do the mean_airtemp input files correspond to?', rq5(_)).
 
 END_XSB_STDIN
-
 

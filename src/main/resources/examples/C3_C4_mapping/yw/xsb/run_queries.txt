@@ -232,4 +232,61 @@ mq20(month)
 
 yes
 | ?- 
-End XSB (cputime 0.01 secs, elapsetime 0.02 secs)
+---------------------------------------------------------------------------------------------------------------------------
+rq1(InputFile) - What input files were used to compose the rain matrix?
+---------------------------------------------------------------------------------------------------------------------------
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+rq2(InputCount) - How many input files were used to compose the air temparature matrix?
+---------------------------------------------------------------------------------------------------------------------------
+rq2(12)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+rq3(InputFile) - What input files provided the data used to derive the workflow output Grass_fraction_data?
+---------------------------------------------------------------------------------------------------------------------------
+rq3(inputs/land_cover/SYNMAP_NA_QD.nc)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+rq4(StartYear, EndYear) - What is the range of years over which the data in the mean_precip input files were collected?
+---------------------------------------------------------------------------------------------------------------------------
+rq4(2000,2010)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+rq5(Month) - What months of the year do the mean_airtemp input files correspond to?
+---------------------------------------------------------------------------------------------------------------------------
+rq5(8)
+rq5(10)
+rq5(1)
+rq5(6)
+rq5(9)
+rq5(11)
+rq5(12)
+rq5(5)
+rq5(2)
+rq5(4)
+rq5(3)
+rq5(7)
+
+yes
+| ?- 
+End XSB (cputime 0.02 secs, elapsetime 0.02 secs)
