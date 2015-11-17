@@ -9,7 +9,7 @@ XSB Version 3.6. (Gazpatcho) of April 22, 2015
 | ?- [rules loaded]
 
 yes
-| ?- [extractfacts loaded]
+| ?- [extractfacts loaded, cpu time used: 0.0010 seconds]
 
 yes
 | ?- [modelfacts loaded]
@@ -18,12 +18,10 @@ yes
 | ?- [reconfacts loaded]
 
 yes
-| ?- [extract_queries loaded, cpu time used: 0.0010 seconds]
+| ?- [extract_queries loaded]
 
 yes
-| ?- [Compiling ./model_queries]
-[model_queries compiled, cpu time used: 0.0090 seconds]
-[model_queries loaded]
+| ?- [model_queries loaded]
 
 yes
 | ?- [recon_queries loaded]
@@ -40,15 +38,15 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 eq2(ProgramName) - What are the names N of all program blocks?
 ---------------------------------------------------------------------------------------------------------------------------
-eq2(generate_netcdf_file_for_C3_fraction)
-eq2(fetch_monthly_mean_precipitation_data)
-eq2(C3_C4_map_present_NA)
-eq2(examine_pixels_for_grass)
 eq2(generate_netcdf_file_for_C4_fraction)
 eq2(fetch_SYNMAP_land_cover_map_variable)
 eq2(generate_netcdf_file_for_Grass_fraction)
 eq2(fetch_monthly_mean_air_temperature_data)
 eq2(initialize_Grass_Matrix)
+eq2(generate_netcdf_file_for_C3_fraction)
+eq2(fetch_monthly_mean_precipitation_data)
+eq2(C3_C4_map_present_NA)
+eq2(examine_pixels_for_grass)
 
 yes
 | ?- 
@@ -220,14 +218,18 @@ yes
 mq19(UriVariableName) - What URI variables are associated with reads of data C3_C4_map_present_NA[mean_airtemp]?
 ---------------------------------------------------------------------------------------------------------------------------
 mq19(month)
+mq19(end_year)
+mq19(start_year)
 
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
 mq20(UpStreamDataName) - What URI variables do data read into mean_precip and mean_airtemp have in common?
 ---------------------------------------------------------------------------------------------------------------------------
+mq20(start_year)
+mq20(end_year)
 mq20(month)
 
 yes
 | ?- 
-End XSB (cputime 0.03 secs, elapsetime 0.03 secs)
+End XSB (cputime 0.01 secs, elapsetime 0.02 secs)
