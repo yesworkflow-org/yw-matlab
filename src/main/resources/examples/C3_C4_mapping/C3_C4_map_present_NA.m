@@ -1,8 +1,8 @@
 % @BEGIN C3_C4_map_present_NA
 %
 % @IN SYNMAP_land_cover_map_data @URI inputs/land_cover/SYNMAP_NA_QD.nc
-% @IN mean_airtemp @URI file:inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.{month}.nc
-% @IN mean_precip @URI file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.{month}.nc
+% @IN mean_airtemp @URI file:inputs/narr_air.2m_monthly/air.2m_monthly_{start_year}_{end_year}_mean.{month}.nc
+% @IN mean_precip @URI file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_{start_year}_{end_year}_mean.{month}.nc
 
 % @OUT C3_fraction_data @URI file:outputs/SYNMAP_PRESENTVEG_C3Grass_RelaFrac_NA_v2.0.nc
 % @OUT C4_fraction_data @URI file:outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc
@@ -43,7 +43,7 @@ netcdf.close(sncid)
 
 %% Load input: long-term monthly mean air temperature data
 % @BEGIN fetch_monthly_mean_air_temperature_data
-% @IN mean_airtemp @URI file:inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.{month}.nc
+% @IN mean_airtemp @URI file:inputs/narr_air.2m_monthly/air.2m_monthly_{start_year}_{end_year}_mean.{month}.nc
 % @OUT Tair @AS Tair_Matrix
 Tair=zeros(ncols,nrows,12);
 for m=1:12
@@ -57,7 +57,7 @@ end
 
 %% Load input: long-term monthly mean precipitation data
 % @BEGIN fetch_monthly_mean_precipitation_data
-% @IN mean_precip @URI file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.{month}.nc
+% @IN mean_precip @URI file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_{start_year}_{end_year}_mean.{month}.nc
 % @OUT Rain @AS Rain_Matrix
 Rain=zeros(ncols,nrows,12);
 for m=1:12

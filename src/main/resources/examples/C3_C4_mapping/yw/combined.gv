@@ -32,8 +32,8 @@ C3_fraction_data [shape=record rankdir=LR label="{<f0> C3_fraction_data |<f1> fi
 C4_fraction_data [shape=record rankdir=LR label="{<f0> C4_fraction_data |<f1> file\:outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc}"];
 Grass_fraction_data [shape=record rankdir=LR label="{<f0> Grass_fraction_data |<f1> file\:outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc}"];
 SYNMAP_land_cover_map_data [shape=record rankdir=LR label="{<f0> SYNMAP_land_cover_map_data |<f1> inputs/land_cover/SYNMAP_NA_QD.nc}"];
-mean_airtemp [shape=record rankdir=LR label="{<f0> mean_airtemp |<f1> file\:inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.\{month\}.nc}"];
-mean_precip [shape=record rankdir=LR label="{<f0> mean_precip |<f1> file\:inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.\{month\}.nc}"];
+mean_airtemp [shape=record rankdir=LR label="{<f0> mean_airtemp |<f1> file\:inputs/narr_air.2m_monthly/air.2m_monthly_\{start_year\}_\{end_year\}_mean.\{month\}.nc}"];
+mean_precip [shape=record rankdir=LR label="{<f0> mean_precip |<f1> file\:inputs/narr_apcp_rescaled_monthly/apcp_monthly_\{start_year\}_\{end_year\}_mean.\{month\}.nc}"];
 Tair_Matrix
 Rain_Matrix
 lon_variable

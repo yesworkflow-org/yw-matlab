@@ -80,14 +80,14 @@ port_alias(20, 'C4_Data').
 
 % FACT: port_uri_template(port_id, uri).
 port_uri_template(1, 'inputs/land_cover/SYNMAP_NA_QD.nc').
-port_uri_template(2, 'file:inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.{month}.nc').
-port_uri_template(3, 'file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.{month}.nc').
+port_uri_template(2, 'file:inputs/narr_air.2m_monthly/air.2m_monthly_{start_year}_{end_year}_mean.{month}.nc').
+port_uri_template(3, 'file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_{start_year}_{end_year}_mean.{month}.nc').
 port_uri_template(4, 'file:outputs/SYNMAP_PRESENTVEG_C3Grass_RelaFrac_NA_v2.0.nc').
 port_uri_template(5, 'file:outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc').
 port_uri_template(6, 'file:outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc').
 port_uri_template(7, 'inputs/land_cover/SYNMAP_NA_QD.nc').
-port_uri_template(12, 'file:inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.{month}.nc').
-port_uri_template(14, 'file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.{month}.nc').
+port_uri_template(12, 'file:inputs/narr_air.2m_monthly/air.2m_monthly_{start_year}_{end_year}_mean.{month}.nc').
+port_uri_template(14, 'file:inputs/narr_apcp_rescaled_monthly/apcp_monthly_{start_year}_{end_year}_mean.{month}.nc').
 port_uri_template(26, 'file:outputs/SYNMAP_PRESENTVEG_C3Grass_RelaFrac_NA_v2.0.nc').
 port_uri_template(32, 'file:outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc').
 port_uri_template(38, 'file:outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc').
@@ -253,7 +253,15 @@ outflow_connects_to_channel(5, 28).
 outflow_connects_to_channel(6, 29).
 
 % FACT: uri_variable(uri_variable_id, variable_name, port_id).
-uri_variable(1, 'month', 2).
-uri_variable(2, 'month', 3).
-uri_variable(3, 'month', 12).
-uri_variable(4, 'month', 14).
+uri_variable(1, 'start_year', 2).
+uri_variable(2, 'end_year', 2).
+uri_variable(3, 'month', 2).
+uri_variable(4, 'start_year', 3).
+uri_variable(5, 'end_year', 3).
+uri_variable(6, 'month', 3).
+uri_variable(7, 'start_year', 12).
+uri_variable(8, 'end_year', 12).
+uri_variable(9, 'month', 12).
+uri_variable(10, 'start_year', 14).
+uri_variable(11, 'end_year', 14).
+uri_variable(12, 'month', 14).
