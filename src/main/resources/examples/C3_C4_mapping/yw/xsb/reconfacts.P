@@ -1,0 +1,138 @@
+
+% FACT: resource(resource_id, resource_uri).
+resource(1, 'inputs/land_cover/SYNMAP_NA_QD.nc').
+resource(2, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.1.nc').
+resource(3, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.10.nc').
+resource(4, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.11.nc').
+resource(5, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.12.nc').
+resource(6, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.2.nc').
+resource(7, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.3.nc').
+resource(8, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.4.nc').
+resource(9, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.5.nc').
+resource(10, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.6.nc').
+resource(11, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.7.nc').
+resource(12, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.8.nc').
+resource(13, 'inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.9.nc').
+resource(14, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc').
+resource(15, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc').
+resource(16, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc').
+resource(17, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc').
+resource(18, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc').
+resource(19, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc').
+resource(20, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc').
+resource(21, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc').
+resource(22, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc').
+resource(23, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc').
+resource(24, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc').
+resource(25, 'inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc').
+resource(26, 'outputs/SYNMAP_PRESENTVEG_C3Grass_RelaFrac_NA_v2.0.nc').
+resource(27, 'outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc').
+resource(28, 'outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc').
+
+% FACT: data_resource(data_id, resource_id).
+data_resource(1, 1).
+data_resource(2, 2).
+data_resource(2, 3).
+data_resource(2, 4).
+data_resource(2, 5).
+data_resource(2, 6).
+data_resource(2, 7).
+data_resource(2, 8).
+data_resource(2, 9).
+data_resource(2, 10).
+data_resource(2, 11).
+data_resource(2, 12).
+data_resource(2, 13).
+data_resource(3, 14).
+data_resource(3, 15).
+data_resource(3, 16).
+data_resource(3, 17).
+data_resource(3, 18).
+data_resource(3, 19).
+data_resource(3, 20).
+data_resource(3, 21).
+data_resource(3, 22).
+data_resource(3, 23).
+data_resource(3, 24).
+data_resource(3, 25).
+data_resource(4, 26).
+data_resource(5, 27).
+data_resource(6, 28).
+data_resource(7, 1).
+data_resource(12, 2).
+data_resource(12, 3).
+data_resource(12, 4).
+data_resource(12, 5).
+data_resource(12, 6).
+data_resource(12, 7).
+data_resource(12, 8).
+data_resource(12, 9).
+data_resource(12, 10).
+data_resource(12, 11).
+data_resource(12, 12).
+data_resource(12, 13).
+data_resource(14, 14).
+data_resource(14, 15).
+data_resource(14, 16).
+data_resource(14, 17).
+data_resource(14, 18).
+data_resource(14, 19).
+data_resource(14, 20).
+data_resource(14, 21).
+data_resource(14, 22).
+data_resource(14, 23).
+data_resource(14, 24).
+data_resource(14, 25).
+data_resource(19, 26).
+data_resource(20, 27).
+data_resource(21, 28).
+
+% FACT: uri_variable_value(resource_id, uri_variable_id, uri_variable_value).
+uri_variable_value(2, 1, '1').
+uri_variable_value(3, 1, '10').
+uri_variable_value(4, 1, '11').
+uri_variable_value(5, 1, '12').
+uri_variable_value(6, 1, '2').
+uri_variable_value(7, 1, '3').
+uri_variable_value(8, 1, '4').
+uri_variable_value(9, 1, '5').
+uri_variable_value(10, 1, '6').
+uri_variable_value(11, 1, '7').
+uri_variable_value(12, 1, '8').
+uri_variable_value(13, 1, '9').
+uri_variable_value(14, 2, '1').
+uri_variable_value(15, 2, '10').
+uri_variable_value(16, 2, '11').
+uri_variable_value(17, 2, '12').
+uri_variable_value(18, 2, '2').
+uri_variable_value(19, 2, '3').
+uri_variable_value(20, 2, '4').
+uri_variable_value(21, 2, '5').
+uri_variable_value(22, 2, '6').
+uri_variable_value(23, 2, '7').
+uri_variable_value(24, 2, '8').
+uri_variable_value(25, 2, '9').
+uri_variable_value(2, 3, '1').
+uri_variable_value(3, 3, '10').
+uri_variable_value(4, 3, '11').
+uri_variable_value(5, 3, '12').
+uri_variable_value(6, 3, '2').
+uri_variable_value(7, 3, '3').
+uri_variable_value(8, 3, '4').
+uri_variable_value(9, 3, '5').
+uri_variable_value(10, 3, '6').
+uri_variable_value(11, 3, '7').
+uri_variable_value(12, 3, '8').
+uri_variable_value(13, 3, '9').
+uri_variable_value(14, 4, '1').
+uri_variable_value(15, 4, '10').
+uri_variable_value(16, 4, '11').
+uri_variable_value(17, 4, '12').
+uri_variable_value(18, 4, '2').
+uri_variable_value(19, 4, '3').
+uri_variable_value(20, 4, '4').
+uri_variable_value(21, 4, '5').
+uri_variable_value(22, 4, '6').
+uri_variable_value(23, 4, '7').
+uri_variable_value(24, 4, '8').
+uri_variable_value(25, 4, '9').
