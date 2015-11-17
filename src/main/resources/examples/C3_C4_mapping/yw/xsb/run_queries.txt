@@ -1,4 +1,4 @@
-[xsb_configuration loaded]
+[xsb_configuration loaded, cpu time used: 0.0010 seconds]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -9,7 +9,7 @@ XSB Version 3.6. (Gazpatcho) of April 22, 2015
 | ?- [rules loaded]
 
 yes
-| ?- [extractfacts loaded, cpu time used: 0.0010 seconds]
+| ?- [extractfacts loaded]
 
 yes
 | ?- [modelfacts loaded]
@@ -21,32 +21,36 @@ yes
 | ?- [extract_queries loaded]
 
 yes
-| ?- [model_queries loaded]
+| ?- [Compiling ./model_queries]
+[model_queries compiled, cpu time used: 0.0090 seconds]
+[model_queries loaded]
 
 yes
-| ?- [recon_queries loaded]
+| ?- [Compiling ./recon_queries]
+[recon_queries compiled, cpu time used: 0.0020 seconds]
+[recon_queries loaded]
 
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-eq1(SourceFile) - What source files SF were YW annotations extracted from?
+eq1(SourceFile) - What source files were YW annotations extracted from?
 ---------------------------------------------------------------------------------------------------------------------------
 eq1(../C3_C4_map_present_NA.m)
 
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-eq2(ProgramName) - What are the names N of all program blocks?
+eq2(ProgramName) - What are the names of all program blocks in the script?
 ---------------------------------------------------------------------------------------------------------------------------
+eq2(generate_netcdf_file_for_C3_fraction)
+eq2(fetch_monthly_mean_precipitation_data)
+eq2(C3_C4_map_present_NA)
+eq2(examine_pixels_for_grass)
 eq2(generate_netcdf_file_for_C4_fraction)
 eq2(fetch_SYNMAP_land_cover_map_variable)
 eq2(generate_netcdf_file_for_Grass_fraction)
 eq2(fetch_monthly_mean_air_temperature_data)
 eq2(initialize_Grass_Matrix)
-eq2(generate_netcdf_file_for_C3_fraction)
-eq2(fetch_monthly_mean_precipitation_data)
-eq2(C3_C4_map_present_NA)
-eq2(examine_pixels_for_grass)
 
 yes
 | ?- 
@@ -74,7 +78,7 @@ mq2(C3_C4_map_present_NA)
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-mq3(ProgramName) -  What are the names of the programs comprising the top-level workflow?
+mq3(ProgramName) -  What are the names of the program blocks comprising the workflow?
 ---------------------------------------------------------------------------------------------------------------------------
 mq3(generate_netcdf_file_for_Grass_fraction)
 mq3(generate_netcdf_file_for_C4_fraction)
@@ -88,7 +92,7 @@ mq3(fetch_SYNMAP_land_cover_map_variable)
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-mq4(ProgramName) - What are the names of the programs in the top workflow that produce workflow outputs?
+mq4(ProgramName) - What are the names of the program blocks in the workflow that produce workflow outputs?
 ---------------------------------------------------------------------------------------------------------------------------
 mq4(generate_netcdf_file_for_Grass_fraction)
 mq4(generate_netcdf_file_for_C4_fraction)
@@ -97,7 +101,7 @@ mq4(generate_netcdf_file_for_C3_fraction)
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-mq5(DataName) - What are the inputs to the top-level workflow?
+mq5(DataName) - What are the inputs to the script?
 ---------------------------------------------------------------------------------------------------------------------------
 mq5(mean_precip)
 mq5(mean_airtemp)
@@ -122,7 +126,7 @@ mq7(C3_C4_map_present_NA.fetch_SYNMAP_land_cover_map_variable)
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-mq8(ProgramName) - What programs have input ports that receive data C3_C4_map_present_NA[lon_variable]?
+mq8(ProgramName) - What program blocks have input ports that receive data C3_C4_map_present_NA[lon_variable]?
 ---------------------------------------------------------------------------------------------------------------------------
 mq8(C3_C4_map_present_NA.generate_netcdf_file_for_Grass_fraction)
 mq8(C3_C4_map_present_NA.generate_netcdf_file_for_C4_fraction)
@@ -235,6 +239,7 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 rq1(InputFile) - What input files were used to compose the rain matrix?
 ---------------------------------------------------------------------------------------------------------------------------
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc)
@@ -246,12 +251,11 @@ rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc)
-rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc)
 
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-rq2(InputCount) - How many input files were used to compose the air temparature matrix?
+rq2(InputCount) - How many input files were used to compose the air tempurature matrix?
 ---------------------------------------------------------------------------------------------------------------------------
 rq2(12)
 
@@ -274,19 +278,19 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 rq5(Month) - What months of the year do the mean_airtemp input files correspond to?
 ---------------------------------------------------------------------------------------------------------------------------
+rq5(7)
+rq5(6)
+rq5(5)
 rq5(8)
 rq5(10)
-rq5(1)
-rq5(6)
+rq5(4)
 rq5(9)
+rq5(1)
 rq5(11)
 rq5(12)
-rq5(5)
-rq5(2)
-rq5(4)
 rq5(3)
-rq5(7)
+rq5(2)
 
 yes
 | ?- 
-End XSB (cputime 0.02 secs, elapsetime 0.02 secs)
+End XSB (cputime 0.03 secs, elapsetime 0.03 secs)

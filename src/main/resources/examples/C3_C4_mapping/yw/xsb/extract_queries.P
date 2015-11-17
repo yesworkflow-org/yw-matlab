@@ -1,9 +1,9 @@
-% EQ1:  What source files SF were YW annotations extracted from?
+% EQ1:  What source files were YW annotations extracted from?
 :- table eq1/1.
 eq1(SourceFile) :-
     extract_source(_, SourceFile).
     
-% EQ2:  What are the names N of all program blocks?
+% EQ2:  What are the names of all program blocks in the script?
 :- table eq2/1.
 eq2(ProgramName) :-
     annotation(_, _, _, 'begin', _, ProgramName).

@@ -9,14 +9,14 @@ mq2(WorkflowName) :-
     top_workflow(W),
     program(W, _, WorkflowName, _, _).
 
-% MQ3:  What are the names of the programs comprising the top-level workflow?
+% MQ3:  What are the names of the program blocks comprising the workflow?
 :- table mq3/1.
 mq3(ProgramName) :-
     top_workflow(W),
     has_subprogram(W, P),
     program(P, ProgramName, _, _, _).
 
-% MQ4:  What are the names of the programs in the top workflow that produce workflow outputs?
+% MQ4:  What are the names of the program blocks in the workflow that produce workflow outputs?
 :- table mq4/1.
 mq4(ProgramName) :-
     top_workflow(W),
@@ -26,7 +26,7 @@ mq4(ProgramName) :-
     has_out_port(Program, ProgramOutputPort),
     program(Program, ProgramName, _, _, _).
 
-% MQ5:  What are the inputs to the top-level workflow?
+% MQ5:  What are the inputs to the script?
 :- table mq5/1.
 mq5(InputPortName) :-
     top_workflow(W),

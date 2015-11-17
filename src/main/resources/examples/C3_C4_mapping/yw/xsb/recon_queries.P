@@ -9,7 +9,7 @@ rq1(InputFile) :-
     inflow_connects_to_channel(_, C2),
     resource(R2, InputFile).
 
-% RQ2: How many input files were used to compose the air temparature matrix?
+% RQ2: How many input files were used to compose the air tempurature matrix?
 :- table rq2/1.
 rq2(InputCount) :-
     count(tair_input_file_resources(_), InputCount).
