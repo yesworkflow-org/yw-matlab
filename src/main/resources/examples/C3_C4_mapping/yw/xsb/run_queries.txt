@@ -12,16 +12,18 @@ yes
 | ?- [extractfacts loaded]
 
 yes
-| ?- [modelfacts loaded]
+| ?- [modelfacts loaded, cpu time used: 0.0010 seconds]
 
 yes
-| ?- [reconfacts loaded, cpu time used: 0.0010 seconds]
+| ?- [reconfacts loaded]
 
 yes
 | ?- [extract_queries loaded]
 
 yes
-| ?- [model_queries loaded]
+| ?- [Compiling ./model_queries]
+[model_queries compiled, cpu time used: 0.0090 seconds]
+[model_queries loaded]
 
 yes
 | ?- [recon_queries loaded]
@@ -59,4 +61,164 @@ eq3(C3_fraction_data)
 
 yes
 | ?- 
-End XSB (cputime 0.01 secs, elapsetime 0.02 secs)
+---------------------------------------------------------------------------------------------------------------------------
+mq1(SourceFile,StartLine,EndLine) - Where is the definition of block C3_C4_map_present_NA.fetch_monthly_mean_precipitation_data?
+---------------------------------------------------------------------------------------------------------------------------
+mq1(../C3_C4_map_present_NA.m,59,69)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq2(WorkflowName) - What is the name of the top-level workflow?
+---------------------------------------------------------------------------------------------------------------------------
+mq2(C3_C4_map_present_NA)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq4(ProgramName) -  What are the names of the programs comprising the top-level workflow?
+---------------------------------------------------------------------------------------------------------------------------
+mq4(generate_netcdf_file_for_Grass_fraction)
+mq4(generate_netcdf_file_for_C4_fraction)
+mq4(generate_netcdf_file_for_C3_fraction)
+mq4(examine_pixels_for_grass)
+mq4(initialize_Grass_Matrix)
+mq4(fetch_monthly_mean_precipitation_data)
+mq4(fetch_monthly_mean_air_temperature_data)
+mq4(fetch_SYNMAP_land_cover_map_variable)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq5(DataName) - What are the inputs to the top-level workflow?
+---------------------------------------------------------------------------------------------------------------------------
+mq5(mean_precip)
+mq5(mean_airtemp)
+mq5(SYNMAP_land_cover_map_data)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq6(DataName) - What data is output by program block C3_C4_map_present_NA.examine_pixels_for_grass?
+---------------------------------------------------------------------------------------------------------------------------
+mq6(C4_Data)
+mq6(C3_Data)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq7(ProgramName) - What program blocks provide input directly to C3_C4_map_present_NA.generate_netcdf_file_for_Grass_fraction?
+---------------------------------------------------------------------------------------------------------------------------
+mq7(C3_C4_map_present_NA.initialize_Grass_Matrix)
+mq7(C3_C4_map_present_NA.fetch_SYNMAP_land_cover_map_variable)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq8(ProgramName) - What programs have input ports that receive data C3_C4_map_present_NA[lon_variable]?
+---------------------------------------------------------------------------------------------------------------------------
+mq8(C3_C4_map_present_NA.generate_netcdf_file_for_Grass_fraction)
+mq8(C3_C4_map_present_NA.generate_netcdf_file_for_C4_fraction)
+mq8(C3_C4_map_present_NA.generate_netcdf_file_for_C3_fraction)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq9(PortCount) - How many ports read data C3_C4_map_present_NA[lat_variable]?
+---------------------------------------------------------------------------------------------------------------------------
+mq9(3)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq10(DataCount) - How many data are read by more than port in workflow C3_C4_map_present_NA?
+---------------------------------------------------------------------------------------------------------------------------
+mq10(4)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq11(ProgramName) - What program blocks are immediately downstream of examine_pixels_for_grass?
+---------------------------------------------------------------------------------------------------------------------------
+mq11(generate_netcdf_file_for_C4_fraction)
+mq11(generate_netcdf_file_for_C3_fraction)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq12(UpstreamProgramName) - What program blocks are immediately upstream of generate_netcdf_file_for_Grass_fraction?
+---------------------------------------------------------------------------------------------------------------------------
+mq12(initialize_Grass_Matrix)
+mq12(fetch_SYNMAP_land_cover_map_variable)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq13(UpstreamProgramName) - What program blocks are upstream of generate_netcdf_file_for_C3_fraction?
+---------------------------------------------------------------------------------------------------------------------------
+mq13(examine_pixels_for_grass)
+mq13(fetch_monthly_mean_precipitation_data)
+mq13(fetch_monthly_mean_air_temperature_data)
+mq13(fetch_SYNMAP_land_cover_map_variable)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq14(DownstreamProgramName) - What program blocks are anywhere downstream of fetch_monthly_mean_precipitation_data?
+---------------------------------------------------------------------------------------------------------------------------
+mq14(generate_netcdf_file_for_C4_fraction)
+mq14(generate_netcdf_file_for_C3_fraction)
+mq14(examine_pixels_for_grass)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq15(DownstreamDataName) - What data is immediately downstream of Tair_Matrix?
+---------------------------------------------------------------------------------------------------------------------------
+mq15(C4_Data)
+mq15(C3_Data)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq16(UpstreamDataName) - What data is immediately upstream of Grass_fraction_data?
+---------------------------------------------------------------------------------------------------------------------------
+mq16(Grass_variable)
+mq16(lat_bnds_variable)
+mq16(lon_bnds_variable)
+mq16(lat_variable)
+mq16(lon_variable)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq17(DownstreamDataName) - What data is downstream of Rain_Matrix?
+---------------------------------------------------------------------------------------------------------------------------
+mq17(C4_Data)
+mq17(C3_Data)
+mq17(C4_fraction_data)
+mq17(C3_fraction_data)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq18(UpstreamDataName) - What data is upstream of SYNMAP_land_cover_map_variable?
+---------------------------------------------------------------------------------------------------------------------------
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq19(UriVariableName) - What URI variables are associated with reads of data C3_C4_map_present_NA[mean_airtemp]?
+---------------------------------------------------------------------------------------------------------------------------
+mq19(month)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq20(UpStreamDataName) - What URI variables do data read into mean_precip and mean_airtemp have in common?
+---------------------------------------------------------------------------------------------------------------------------
+mq20(month)
+
+yes
+| ?- 
+End XSB (cputime 0.02 secs, elapsetime 0.03 secs)

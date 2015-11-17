@@ -93,45 +93,45 @@ port_uri_template(32, 'file:outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.n
 port_uri_template(38, 'file:outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc').
 
 % FACT: has_in_port(block_id, port_id).
+has_in_port(1, 1).
+has_in_port(1, 2).
+has_in_port(1, 3).
+has_in_port(2, 7).
+has_in_port(3, 12).
+has_in_port(4, 14).
+has_in_port(6, 17).
+has_in_port(6, 18).
+has_in_port(7, 21).
+has_in_port(7, 22).
+has_in_port(7, 23).
+has_in_port(7, 24).
+has_in_port(7, 25).
+has_in_port(8, 27).
+has_in_port(8, 28).
+has_in_port(8, 29).
+has_in_port(8, 30).
+has_in_port(8, 31).
+has_in_port(9, 33).
+has_in_port(9, 34).
+has_in_port(9, 35).
+has_in_port(9, 36).
+has_in_port(9, 37).
 
 % FACT: has_out_port(block_id, port_id).
-has_out_port(1, 1).
-has_out_port(1, 2).
-has_out_port(1, 3).
 has_out_port(1, 4).
 has_out_port(1, 5).
 has_out_port(1, 6).
-has_out_port(2, 7).
 has_out_port(2, 8).
 has_out_port(2, 9).
 has_out_port(2, 10).
 has_out_port(2, 11).
-has_out_port(3, 12).
 has_out_port(3, 13).
-has_out_port(4, 14).
 has_out_port(4, 15).
 has_out_port(5, 16).
-has_out_port(6, 17).
-has_out_port(6, 18).
 has_out_port(6, 19).
 has_out_port(6, 20).
-has_out_port(7, 21).
-has_out_port(7, 22).
-has_out_port(7, 23).
-has_out_port(7, 24).
-has_out_port(7, 25).
 has_out_port(7, 26).
-has_out_port(8, 27).
-has_out_port(8, 28).
-has_out_port(8, 29).
-has_out_port(8, 30).
-has_out_port(8, 31).
 has_out_port(8, 32).
-has_out_port(9, 33).
-has_out_port(9, 34).
-has_out_port(9, 35).
-has_out_port(9, 36).
-has_out_port(9, 37).
 has_out_port(9, 38).
 
 % FACT: data(data_id, data_name, qualified_data_name).
