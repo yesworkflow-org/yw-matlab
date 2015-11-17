@@ -18,7 +18,8 @@ printall('eq3(PortName) - What out ports are qualified with URIs?', eq3(_)).
 
 printall('mq1(SourceFile,StartLine,EndLine) - Where is the definition of block C3_C4_map_present_NA.fetch_monthly_mean_precipitation_data?', mq1(_,_,_)).
 printall('mq2(WorkflowName) - What is the name of the top-level workflow?', mq2(_)).
-printall('mq4(ProgramName) -  What are the names of the programs comprising the top-level workflow?', mq4(_)).
+printall('mq3(ProgramName) -  What are the names of the programs comprising the top-level workflow?', mq3(_)).
+printall('mq4(ProgramName) - What are the names of the programs in the top workflow that produce workflow outputs?', mq4(_)).
 printall('mq5(DataName) - What are the inputs to the top-level workflow?', mq5(_)).
 printall('mq6(DataName) - What data is output by program block C3_C4_map_present_NA.examine_pixels_for_grass?', mq6(_)).
 

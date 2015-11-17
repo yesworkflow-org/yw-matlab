@@ -12,13 +12,13 @@ yes
 | ?- [extractfacts loaded]
 
 yes
-| ?- [modelfacts loaded, cpu time used: 0.0010 seconds]
+| ?- [modelfacts loaded]
 
 yes
 | ?- [reconfacts loaded]
 
 yes
-| ?- [extract_queries loaded]
+| ?- [extract_queries loaded, cpu time used: 0.0010 seconds]
 
 yes
 | ?- [Compiling ./model_queries]
@@ -40,7 +40,6 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 eq2(ProgramName) - What are the names N of all program blocks?
 ---------------------------------------------------------------------------------------------------------------------------
-eq2(initialize_Grass_Matrix)
 eq2(generate_netcdf_file_for_C3_fraction)
 eq2(fetch_monthly_mean_precipitation_data)
 eq2(C3_C4_map_present_NA)
@@ -49,6 +48,7 @@ eq2(generate_netcdf_file_for_C4_fraction)
 eq2(fetch_SYNMAP_land_cover_map_variable)
 eq2(generate_netcdf_file_for_Grass_fraction)
 eq2(fetch_monthly_mean_air_temperature_data)
+eq2(initialize_Grass_Matrix)
 
 yes
 | ?- 
@@ -76,16 +76,25 @@ mq2(C3_C4_map_present_NA)
 yes
 | ?- 
 ---------------------------------------------------------------------------------------------------------------------------
-mq4(ProgramName) -  What are the names of the programs comprising the top-level workflow?
+mq3(ProgramName) -  What are the names of the programs comprising the top-level workflow?
+---------------------------------------------------------------------------------------------------------------------------
+mq3(generate_netcdf_file_for_Grass_fraction)
+mq3(generate_netcdf_file_for_C4_fraction)
+mq3(generate_netcdf_file_for_C3_fraction)
+mq3(examine_pixels_for_grass)
+mq3(initialize_Grass_Matrix)
+mq3(fetch_monthly_mean_precipitation_data)
+mq3(fetch_monthly_mean_air_temperature_data)
+mq3(fetch_SYNMAP_land_cover_map_variable)
+
+yes
+| ?- 
+---------------------------------------------------------------------------------------------------------------------------
+mq4(ProgramName) - What are the names of the programs in the top workflow that produce workflow outputs?
 ---------------------------------------------------------------------------------------------------------------------------
 mq4(generate_netcdf_file_for_Grass_fraction)
 mq4(generate_netcdf_file_for_C4_fraction)
 mq4(generate_netcdf_file_for_C3_fraction)
-mq4(examine_pixels_for_grass)
-mq4(initialize_Grass_Matrix)
-mq4(fetch_monthly_mean_precipitation_data)
-mq4(fetch_monthly_mean_air_temperature_data)
-mq4(fetch_SYNMAP_land_cover_map_variable)
 
 yes
 | ?- 
@@ -221,4 +230,4 @@ mq20(month)
 
 yes
 | ?- 
-End XSB (cputime 0.02 secs, elapsetime 0.03 secs)
+End XSB (cputime 0.03 secs, elapsetime 0.03 secs)
