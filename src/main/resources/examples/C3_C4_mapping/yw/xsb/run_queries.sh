@@ -23,8 +23,8 @@ printall('mq4(ProgramName) - What are the names of the program blocks in the wor
 printall('mq5(DataName) - What are the inputs to the script?', mq5(_)).
 printall('mq6(DataName) - What data is output by program block C3_C4_map_present_NA.examine_pixels_for_grass?', mq6(_)).
 printall('mq7(ProgramName) - What program blocks provide input directly to C3_C4_map_present_NA.generate_netcdf_file_for_Grass_fraction?', mq7(_)).
-printall('mq8(ProgramName) - What program blocks have input ports that receive data C3_C4_map_present_NA[lon_variable]?', mq8(_)).
-printall('mq9(PortCount) - How many ports read data C3_C4_map_present_NA[lat_variable]?', mq9(_)).
+printall('mq8(ProgramName) - What program blocks have input ports that receive data lon_variable?', mq8(_)).
+printall('mq9(PortCount) - How many ports read data lat_variable?', mq9(_)).
 printall('mq10(DataCount) - How many data are read by more than port in workflow C3_C4_map_present_NA?', mq10(_)).
 printall('mq11(ProgramName) - What program blocks are immediately downstream of examine_pixels_for_grass?', mq11(_)).
 printall('mq12(UpstreamProgramName) - What program blocks are immediately upstream of generate_netcdf_file_for_Grass_fraction?', mq12(_)).
@@ -34,7 +34,7 @@ printall('mq15(DownstreamDataName) - What data is immediately downstream of Tair
 printall('mq16(UpstreamDataName) - What data is immediately upstream of Grass_fraction_data?', mq16(_)).
 printall('mq17(DownstreamDataName) - What data is downstream of Rain_Matrix?', mq17(_)).
 printall('mq18(UpstreamDataName) - What data is upstream of SYNMAP_land_cover_map_variable?', mq18(_)).
-printall('mq19(UriVariableName) - What URI variables are associated with reads of data C3_C4_map_present_NA[mean_airtemp]?', mq19(_)).
+printall('mq19(UriVariableName) - What URI variables are associated with reads of data mean_airtemp?', mq19(_)).
 printall('mq20(UpStreamDataName) - What URI variables do data read into mean_precip and mean_airtemp have in common?', mq20(_)).
 
 printall('rq1(InputFile) - What input files were used to compose the rain matrix?', rq1(_)).

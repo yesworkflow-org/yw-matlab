@@ -48,7 +48,7 @@ mq7(ProgramName) :-
     port_data(IN, _, D),
     port_data(OUT, _, D),
     has_out_port(P2, OUT),
-    program(P2, _, ProgramName, _, _).
+    program(P2, ProgramName, _, _, _).
 
 % MQ8: What programs have input ports that receive data C3_C4_map_present_NA[lon_variable]?
 :- table mq8/1.
@@ -57,7 +57,7 @@ mq8(ProgramName) :-
     channel(C, D),
     port_connects_to_channel(IN, C),
     has_in_port(P, IN),
-    program(P, _, ProgramName, _, _).
+    program(P, ProgramName, _, _, _).
 
 % MQ9: How many ports read data C3_C4_map_present_NA[lat_variable]?
 :- table mq9/1.
