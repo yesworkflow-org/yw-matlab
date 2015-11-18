@@ -41,6 +41,7 @@ Directory or file | Description
 The following is a summary of the queries posed by running [yw/xsb/run_queries.sh](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.sh) and the corresponding results.
 
 #### Queries about the script and the YW annotations extracted from it
+See [extract_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extract_queries.P) for Prolog definitions of the queries.
 
     | Query | Result
 ----|-------|--------
@@ -49,6 +50,7 @@ EQ2 | What are the names of all program blocks in the script? | `generate_netcdf
 EQ3 | What out ports are qualified with URIs? | `Grass_fraction_data`, `C4_fraction_data`, `C3_fraction_data`
 
 #### Queries about the workflow model of the script (prospective provenance)
+See [model_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/model_queries.P) for Prolog definitions of the queries.
 
     | Query | Result
 ----|-------|--------
@@ -74,6 +76,8 @@ MQ19 | What URI variables are associated with reads of data `mean_airtemp`? | `m
 MQ20 | What URI variables do data read into `mean_precip` and `mean_airtemp` have in common? | `start_year`, `end_year`, `month`
 
 #### Queries about a run of the script (retrospective provenance)
+See [recon_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/recon_queries.P) for Prolog definitions of the queries.
+
     | Query | Result
 ----|-------|--------
 RQ1| What input files were used to compose the precipitation array `Rain_Matrix`? | `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc`
