@@ -42,16 +42,16 @@ The following is a summary of the queries posed by running [yw/xsb/run_queries.s
 
 #### Queries about the script and the YW annotations extracted from it
 
- | Query | Result
--|-------|--------
-EQ1 | What source files were YW annotations extracted from? | `../C3_C4_map_present_NA.m`
+ID  | Query | Result
+----|-------|--------
+EQ1 | What source files were YW annotations extracted from?   | `../C3_C4_map_present_NA.m`
 EQ2 | What are the names of all program blocks in the script? | `generate_netcdf_file_for_C3_fraction`, `fetch_monthly_mean_precipitation_data`, `C3_C4_map_present_NA`, `examine_pixels_for_grass`, `generate_netcdf_file_for_C4_fraction`, `fetch_SYNMAP_land_cover_map_variable`, `generate_netcdf_file_for_Grass_fraction`, `fetch_monthly_mean_air_temperature_data`, `initialize_Grass_Matrix`
 EQ3 | What out ports are qualified with URIs? | `Grass_fraction_data`, `C4_fraction_data`, `C3_fraction_data`
 
 #### Queries about the workflow model of the script (prospective provenance)
 
- | Query | Result
--|-------|--------
+   | Query | Result
+----|-------|--------
 MQ1 | Where is the definition of block `fetch_monthly_mean_precipitation_data`? | SourceFile=`../C3_C4_map_present_NA.m`, StartLine=`59`, EndLine=`69`
 MQ2 | What is the name of the top-level workflow? | `C3_C4_map_present_NA`
 MQ3 | What are the names of the program blocks comprising the workflow? |<ul><li>generate_netcdf_file_for_Grass_fraction <li>generate_netcdf_file_for_C4_fraction <li>generate_netcdf_file_for_C3_fraction <li>examine_pixels_for_grass <li>initialize_Grass_Matrix <li>fetch_monthly_mean_precipitation_data <li>fetch_monthly_mean_air_temperature_data <li>fetch_SYNMAP_land_cover_map_variable)</ul>
