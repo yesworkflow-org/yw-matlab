@@ -28,11 +28,11 @@ Directory or file | Description
 [inputs/](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/inputs) | Script input data files.
 [outputs/](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/outputs) | Outputs from one run of the script.
 [yw/](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw) | YesWorkflow configuration and output files.
-[yw/xsb/extractfacts.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extractfacts.P), [yw/xsb/modelfacts.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/modelfacts.P), [yw/xsb/reconfacts.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/reconfacts.P)  | Prolog fact files created by YesWorkflow and containing the prospective and retrospective provenance captured by YW.
-[yw/xsb/rules.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/rules.P) | Prolog rules for querying the YW-written facts.
-[yw/xsb/extract_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extract_queries.P), [yw/xsb/model_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/model_queries.P), [yw/xsb/recon_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/recon_queries.P)| Prolog queries employing the rules defined in rules.P.
-[yw/xsb/run_queries.sh](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.sh) | Bash script for running all of the Prolog queries.
-[yw/xsb/run_queries.txt](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.txt) | The output produced by running all of the Prolog queries using run_queries.sh.
+[yw/xsb/extractfacts.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extractfacts.P), [yw/xsb/modelfacts.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/modelfacts.P), [yw/xsb/reconfacts.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/reconfacts.P)  | Fact files created by YesWorkflow and containing the prospective and retrospective provenance captured by YW.
+[yw/xsb/rules.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/rules.P) | Logic rules for querying the YW-written facts.
+[yw/xsb/extract_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extract_queries.P), [yw/xsb/model_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/model_queries.P), [yw/xsb/recon_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/recon_queries.P)| Queries employing the rules defined in rules.P.
+[yw/xsb/run_queries.sh](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.sh) | Bash script for running all of the queries.
+[yw/xsb/run_queries.txt](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.txt) | The output produced by running all of the queries using run_queries.sh.
 
 #### YesWorkflow combined view of script
 
@@ -43,7 +43,7 @@ Directory or file | Description
 The following is a summary of the queries posed by running [yw/xsb/run_queries.sh](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.sh) and the corresponding results.
 
 #### Queries about the script and the YW annotations extracted from it
-See [extract_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extract_queries.P) for Prolog definitions of the queries.
+See [extract_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/extract_queries.P) for definitions of the queries.
 
     | Query | Result
 ----|-------|--------
@@ -52,7 +52,7 @@ EQ2 | What are the names of all program blocks in the script? | `generate_netcdf
 EQ3 | What out ports are qualified with URIs? | `Grass_fraction_data`, `C4_fraction_data`, `C3_fraction_data`
 
 #### Queries about the workflow model of the script (prospective provenance)
-See [model_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/model_queries.P) for Prolog definitions of the queries.
+See [model_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/model_queries.P) for definitions of the queries.
 
     | Query | Result
 ----|-------|--------
@@ -78,7 +78,7 @@ MQ19 | What URI variables are associated with reads of data `mean_airtemp`? | `m
 MQ20 | What URI variables do data read into `mean_precip` and `mean_airtemp` have in common? | `start_year`, `end_year`, `month`
 
 #### Queries about a run of the script (retrospective provenance)
-See [recon_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/recon_queries.P) for Prolog definitions of the queries.
+See [recon_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/recon_queries.P) for definitions of the queries.
 
     | Query | Result
 ----|-------|--------

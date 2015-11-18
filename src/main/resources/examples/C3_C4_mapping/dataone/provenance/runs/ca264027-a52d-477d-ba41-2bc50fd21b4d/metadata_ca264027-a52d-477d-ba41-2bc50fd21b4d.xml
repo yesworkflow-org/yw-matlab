@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eml:eml xmlns:eml="eml://ecoinformatics.org/eml-2.0.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packageId="ca264027-a52d-477d-ba41-2bc50fd21b4d" scope="system" system="knb" xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 eml.xsd">
+   <dataset>
+      <title>Run of C3_C4_map_present_NA_with_comments.m on 20151112T200514</title>
+      <creator id="creator">
+         <individualName>
+            <surName>YOUR_SURNAME</surName>
+         </individualName>
+      </creator>
+      <abstract>
+         <para>YOUR_ABSTRACT</para>
+      </abstract>
+      <keywordSet/>
+      <contact>
+         <references>creator</references>
+      </contact>
+   </dataset>
+</eml:eml>
