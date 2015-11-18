@@ -9,7 +9,7 @@ rq1(InputFile) :-
     inflow_connects_to_channel(_, C2),
     resource(R2, InputFile).
 
-% RQ2: How many input files were used to compose the air tempurature matrix?
+% RQ2: How many input files were used to compose the air temperature matrix?
 :- table rq2/1.
 rq2(InputCount) :-
     count(tair_input_file_resources(_), InputCount).
@@ -40,7 +40,7 @@ rq4(StartYear, EndYear) :-
     read_resource_metadata(R, 'start_year', StartYear),
     read_resource_metadata(R, 'end_year', EndYear).
 
-% RQ5: What is the range of years over which the data in the mean_airtemp input files were collected?
+% RQ5: WWat months of the year do the mean_airtemp input files correspond to?'
 :- table rq5/1.
 rq5(Month) :-
     data(D, 'mean_airtemp', _),
