@@ -42,7 +42,7 @@ The following is a summary of the queries posed by running [yw/xsb/run_queries.s
 
 #### Queries about the script and the YW annotations extracted from it
 
-    | Query | Result
+ID  | Query | Result
 ----|-------|--------
 EQ1 | What source files were YW annotations extracted from?   | `../C3_C4_map_present_NA.m`
 EQ2 | What are the names of all program blocks in the script? | `generate_netcdf_file_for_C3_fraction`, `fetch_monthly_mean_precipitation_data`, `C3_C4_map_present_NA`, `examine_pixels_for_grass`, `generate_netcdf_file_for_C4_fraction`, `fetch_SYNMAP_land_cover_map_variable`, `generate_netcdf_file_for_Grass_fraction`, `fetch_monthly_mean_air_temperature_data`, `initialize_Grass_Matrix`
@@ -76,11 +76,11 @@ MQ20 | What URI variables do data read into `mean_precip` and `mean_airtemp` hav
 #### Queries about a run of the script (retrospective provenance)
  | Query | Result
 -|-------|--------
-RQ1| What input files were used to compose the precipitation array `Rain_Matrix`? | <ul><li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc <li>inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc</ul>
-RQ2 | How many input files were used to compose the air temperature array `Tair_Matrix`? | 12
-RQ3 | What input files provided the data used to derive the workflow output `Grass_fraction_data`? | inputs/land_cover/SYNMAP_NA_QD.nc
-RQ4 | What is the range of years over which the data in the `mean_precip` input files were collected? | StartYear=2000, EndYear=2010
-RQ5 | What months of the year do the mean_airtemp input files correspond to? | <ul><li>7 <li>2<li>3<li>5<li>8<li>10<li>4<li>9<li>11<li>1<li>6<li>12</ul>
+RQ1| What input files were used to compose the precipitation array `Rain_Matrix`? | `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc`
+RQ2 | How many input files were used to compose the air temperature array `Tair_Matrix`? | `12`
+RQ3 | What input files provided the data used to derive the workflow output `Grass_fraction_data`? | `inputs/land_cover/SYNMAP_NA_QD.nc`
+RQ4 | What is the range of years over which the data in the `mean_precip` input files were collected? | StartYear=`2000`, EndYear=`2010`
+RQ5 | What months of the year do the mean_airtemp input files correspond to? | `7`, `2`, 3`,`5`,`8`,`10`,`4`,`9`,`11`,`1`,`6`,`12</ul>
 
 
 
