@@ -16,7 +16,7 @@ Directory | Description
 Examples
 --------
 
-#### C3_C4_mapping
+### C3_C4_mapping
 
 The example script and data files currently used to exercise the tools in this repository are based on those used in the  [DataONE MATLAB Toolbox Walk-through](https://github.com/DataONEorg/matlab-dataone/blob/master/docs/walk-through.rst).  
 
@@ -34,11 +34,11 @@ Directory or file | Description
 [yw/xsb/run_queries.sh](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.sh) | Bash script for running all of the Prolog queries.
 [yw/xsb/run_queries.txt](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.txt) | The output produced by running all of the Prolog queries using run_queries.sh.
 
-##### YesWorkflow combined view of script
+#### YesWorkflow combined view of script
 
 ![Combined YW view of C3_C4_map_present_NA.m](https://raw.githubusercontent.com/yesworkflow-org/yw-matlab/master/src/main/resources/examples/C3_C4_mapping/yw/combined.png)
 
-### YW provenance queries 
+#### YW provenance queries 
 
 The following is a summary of the queries posed by running [yw/xsb/run_queries.sh](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping/yw/xsb/run_queries.sh) and the corresponding results.
 
