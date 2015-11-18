@@ -42,7 +42,7 @@ The following is a summary of the queries posed by running [yw/xsb/run_queries.s
 
 #### Queries about the script and the YW annotations extracted from it
 
-ID  | Query | Result
+    | Query | Result
 ----|-------|--------
 EQ1 | What source files were YW annotations extracted from?   | `../C3_C4_map_present_NA.m`
 EQ2 | What are the names of all program blocks in the script? | `generate_netcdf_file_for_C3_fraction`, `fetch_monthly_mean_precipitation_data`, `C3_C4_map_present_NA`, `examine_pixels_for_grass`, `generate_netcdf_file_for_C4_fraction`, `fetch_SYNMAP_land_cover_map_variable`, `generate_netcdf_file_for_Grass_fraction`, `fetch_monthly_mean_air_temperature_data`, `initialize_Grass_Matrix`
@@ -50,7 +50,7 @@ EQ3 | What out ports are qualified with URIs? | `Grass_fraction_data`, `C4_fract
 
 #### Queries about the workflow model of the script (prospective provenance)
 
-ID  | Query | Result
+    | Query | Result
 ----|-------|--------
 MQ1 | Where is the definition of block `fetch_monthly_mean_precipitation_data`? | SourceFile=`../C3_C4_map_present_NA.m`, StartLine=`59`, EndLine=`69`
 MQ2 | What is the name of the top-level workflow? | `C3_C4_map_present_NA`
@@ -74,7 +74,7 @@ MQ19 | What URI variables are associated with reads of data `mean_airtemp`? | `m
 MQ20 | What URI variables do data read into `mean_precip` and `mean_airtemp` have in common? | `start_year`, `end_year`, `month`
 
 #### Queries about a run of the script (retrospective provenance)
-ID  | Query | Result
+    | Query | Result
 ----|-------|--------
 RQ1| What input files were used to compose the precipitation array `Rain_Matrix`? | `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc`,  `inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc`
 RQ2 | How many input files were used to compose the air temperature array `Tair_Matrix`? | `12`
