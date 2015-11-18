@@ -54,24 +54,24 @@ EQ3 | What out ports are qualified with URIs? | `Grass_fraction_data`, `C4_fract
 ----|-------|--------
 MQ1 | Where is the definition of block `fetch_monthly_mean_precipitation_data`? | SourceFile=`../C3_C4_map_present_NA.m`, StartLine=`59`, EndLine=`69`
 MQ2 | What is the name of the top-level workflow? | `C3_C4_map_present_NA`
-MQ3 | What are the names of the program blocks comprising the workflow? |<ul><li>generate_netcdf_file_for_Grass_fraction <li>generate_netcdf_file_for_C4_fraction <li>generate_netcdf_file_for_C3_fraction <li>examine_pixels_for_grass <li>initialize_Grass_Matrix <li>fetch_monthly_mean_precipitation_data <li>fetch_monthly_mean_air_temperature_data <li>fetch_SYNMAP_land_cover_map_variable)</ul>
-MQ4 | What are the names of the program blocks in the workflow that produce workflow outputs? | <ul><li>generate_netcdf_file_for_Grass_fraction <li>generate_netcdf_file_for_C4_fraction <li>generate_netcdf_file_for_C3_fraction</ul>
-MQ5 | What are the inputs to the script? | <ul><li>mean_precip <li>mean_airtemp <li>SYNMAP_land_cover_map_data</ul>
-MQ6 | What data is output by program block `examine_pixels_for_grass`? | <ul><li>C4_Data <li>C3_Data</ul>
-MQ7 | What program blocks provide input directly to `generate_netcdf_file_for_Grass_fraction`? | <ul><li>initialize_Grass_Matrix <li>fetch_SYNMAP_land_cover_map_variable</ul>
-MQ8 | What programs have input ports that receive data `lon_variable`? | <ul><li>generate_netcdf_file_for_Grass_fraction <li>generate_netcdf_file_for_C4_fraction <li>generate_netcdf_file_for_C3_fraction</ul>
-MQ9 | How many ports read data `lat_variable`? | 3
-MQ10 | How many data are read by more than port in workflow `C3_C4_map_present_NA`? | 4
-MQ11 | What program blocks are immediately downstream of `examine_pixels_for_grass`? | <ul><li>generate_netcdf_file_for_C4_fraction <li>generate_netcdf_file_for_C3_fraction</ul>
-MQ12 | What program blocks are immediately upstream of `generate_netcdf_file_for_Grass_fraction`? | <ul><li>initialize_Grass_Matrix <li>fetch_SYNMAP_land_cover_map_variable</ul>
-MQ13 | What program blocks are upstream of `generate_netcdf_file_for_C3_fraction`? | <ul> <li>examine_pixels_for_grass <li>fetch_monthly_mean_precipitation_data <li>fetch_monthly_mean_air_temperature_data <li>fetch_SYNMAP_land_cover_map_variable</ul>
-MQ14 | What program blocks are anywhere downstream of `fetch_monthly_mean_precipitation_data`? | <ul><li>generate_netcdf_file_for_C4_fraction <li>generate_netcdf_file_for_C3_fraction <li>examine_pixels_for_grass</ul>
-MQ15 | What data is immediately downstream of `Tair_Matrix`? | <ul><li>C4_Data <li>C3_Data</ul>
-MQ16 | What data is immediately upstream of `Grass_fraction_data`? | <ul><li>Grass_variable <li>lat_bnds_variable <li>lon_bnds_variable <li>lat_variable <li>lon_variable </ul>
-MQ17 | What data is downstream of `Rain_Matrix`? | <ul><li>C4_Data <li>C3_Data <li>C4_fraction_data <li>C3_fraction_data</ul>
+MQ3 | What are the names of the program blocks comprising the workflow? | `generate_netcdf_file_for_Grass_fraction`, `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`, `examine_pixels_for_grass`, `initialize_Grass_Matrix`, `fetch_monthly_mean_precipitation_data`, `fetch_monthly_mean_air_temperature_data`, `fetch_SYNMAP_land_cover_map_variable`
+MQ4 | What are the names of the program blocks in the workflow that produce workflow outputs? | `generate_netcdf_file_for_Grass_fraction`, `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`
+MQ5 | What are the inputs to the script? | `mean_precip`, `mean_airtemp`, `SYNMAP_land_cover_map_data`
+MQ6 | What data is output by program block `examine_pixels_for_grass`? | `C4_Data`, `C3_Data`
+MQ7 | What program blocks provide input directly to `generate_netcdf_file_for_Grass_fraction`? | `initialize_Grass_Matrix`, `fetch_SYNMAP_land_cover_map_variable`
+MQ8 | What programs have input ports that receive data `lon_variable`? | `generate_netcdf_file_for_Grass_fraction`, `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`
+MQ9 | How many ports read data `lat_variable`? | `3`
+MQ10 | How many data are read by more than port in workflow `C3_C4_map_present_NA`? | `4`
+MQ11 | What program blocks are immediately downstream of `examine_pixels_for_grass`? | `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`
+MQ12 | What program blocks are immediately upstream of `generate_netcdf_file_for_Grass_fraction`? | `initialize_Grass_Matrix`, `fetch_SYNMAP_land_cover_map_variable`
+MQ13 | What program blocks are upstream of `generate_netcdf_file_for_C3_fraction`? | `examine_pixels_for_grass`, `fetch_monthly_mean_precipitation_data`, `fetch_monthly_mean_air_temperature_data`, `fetch_SYNMAP_land_cover_map_variable`
+MQ14 | What program blocks are anywhere downstream of `fetch_monthly_mean_precipitation_data`? | `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`, `examine_pixels_for_grass`
+MQ15 | What data is immediately downstream of `Tair_Matrix`? | `C4_Data`, `C3_Data`
+MQ16 | What data is immediately upstream of `Grass_fraction_data`? | `Grass_variable`, `lat_bnds_variable`, `lon_bnds_variable`, `lat_variable`, `lon_variable`
+MQ17 | What data is downstream of `Rain_Matrix`? | `C4_Data`, `C3_Data`, `C4_fraction_data`, `C3_fraction_data`
 MQ18 | What data is upstream of `SYNMAP_land_cover_map_variable`? |
-MQ19 | What URI variables are associated with reads of data `mean_airtemp`? | <ul><li>month <li>end_year <li>start_year</ul>
-MQ20 | What URI variables do data read into `mean_precip` and `mean_airtemp` have in common? | <ul><li>start_year <li>end_year <li>month </ul>
+MQ19 | What URI variables are associated with reads of data `mean_airtemp`? | `month`, `end_year`, `start_year`
+MQ20 | What URI variables do data read into `mean_precip` and `mean_airtemp` have in common? | `start_year`, `end_year`, `month`
 
 #### Queries about a run of the script (retrospective provenance)
  | Query | Result
