@@ -18,7 +18,7 @@ Examples
 
 #### C3_C4_mapping
 
-The example script and data files currently used to exercise the tools in this repository are based on those used in the DataONE [MATLAB Walk-through](https://github.com/DataONEorg/matlab-dataone/blob/master/docs/walk-through.rst).  Files for this example are located at [src/main/resources/examples/C3_C4_mapping](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping). Layout of directories and files within this example directory:
+The example script and data files currently used to exercise the tools in this repository are based on those used in the  [DataONE MATLAB Toolbox Walk-through](https://github.com/DataONEorg/matlab-dataone/blob/master/docs/walk-through.rst).  Files for this example are located at [src/main/resources/examples/C3_C4_mapping](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples/C3_C4_mapping). Layout of directories and files within this example directory:
 
 Directory or file | Description
 ------------------|------------
