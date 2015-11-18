@@ -45,7 +45,7 @@ The following is a summary of the queries posed by running [yw/xsb/run_queries.s
  | Query | Result
 -|-------|--------
 EQ1 | What source files were YW annotations extracted from? | ../C3_C4_map_present_NA.m
-EQ2 | What are the names of all program blocks in the script? | <ul><li>generate_netcdf_file_for_C3_fraction <li> fetch_monthly_mean_precipitation_data <li>C3_C4_map_present_NA <li> examine_pixels_for_grass <li> generate_netcdf_file_for_C4_fraction <li> fetch_SYNMAP_land_cover_map_variable <li> generate_netcdf_file_for_Grass_fraction <li> fetch_monthly_mean_air_temperature_data <li> initialize_Grass_Matrix</ul>
+EQ2 | What are the names of all program blocks in the script? | generate_netcdf_file_for_C3_fraction<br/> fetch_monthly_mean_precipitation_data <br/> C3_C4_map_present_NA <br/> examine_pixels_for_grass <br/> generate_netcdf_file_for_C4_fraction <br/> fetch_SYNMAP_land_cover_map_variable <br/> generate_netcdf_file_for_Grass_fraction <br/> fetch_monthly_mean_air_temperature_data <br/> initialize_Grass_Matrix
 EQ3 | What out ports are qualified with URIs? | <ul><li>Grass_fraction_data <li> C4_fraction_data <li> C3_fraction_data </ul>
 
 #### Queries about the workflow model of the script (prospective provenance)
