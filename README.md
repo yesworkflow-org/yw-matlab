@@ -56,7 +56,7 @@ See [model_queries.P](https://github.com/yesworkflow-org/yw-matlab/tree/master/s
 
     | Query | Result
 ----|-------|--------
-MQ1 | Where is the definition of block `fetch_monthly_mean_precipitation_data`? | SourceFile=`../C3_C4_map_present_NA.m`, StartLine=`59`, EndLine=`69`
+MQ1 | Where is the definition of program block `fetch_monthly_mean_precipitation_data`? | SourceFile=`../C3_C4_map_present_NA.m`, StartLine=`59`, EndLine=`69`
 MQ2 | What is the name of the top-level workflow? | `C3_C4_map_present_NA`
 MQ3 | What are the names of the program blocks comprising the workflow? | `generate_netcdf_file_for_Grass_fraction`, `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`, `examine_pixels_for_grass`, `initialize_Grass_Matrix`, `fetch_monthly_mean_precipitation_data`, `fetch_monthly_mean_air_temperature_data`, `fetch_SYNMAP_land_cover_map_variable`
 MQ4 | What are the names of the program blocks in the workflow that produce workflow outputs? | `generate_netcdf_file_for_Grass_fraction`, `generate_netcdf_file_for_C4_fraction`, `generate_netcdf_file_for_C3_fraction`
@@ -87,13 +87,3 @@ RQ2 | How many input files were used to compose the air temperature array `Tair_
 RQ3 | What input files provided the data used to derive the workflow output `Grass_fraction_data`? | `inputs/land_cover/SYNMAP_NA_QD.nc`
 RQ4 | What is the range of years over which the data in the `mean_precip` input files were collected? | StartYear=`2000`, EndYear=`2010`
 RQ5 | What months of the year do the mean_airtemp input files correspond to? | `7`, `2`, `3`,`5`,`8`,`10`,`4`,`9`,`11`,`1`,`6`,`12`</ul>
-
-
-
-
-
-
-
-
-
-
