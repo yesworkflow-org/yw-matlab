@@ -42,7 +42,7 @@ The following is a summary of the queries posed by running [yw/xsb/run_queries.s
 
 #### Queries about the script and the YW annotations extracted from it
 
-ID  | Query | Result
+    | Query | Result
 ----|-------|--------
 EQ1 | What source files were YW annotations extracted from?   | `../C3_C4_map_present_NA.m`
 EQ2 | What are the names of all program blocks in the script? | `generate_netcdf_file_for_C3_fraction`, `fetch_monthly_mean_precipitation_data`, `C3_C4_map_present_NA`, `examine_pixels_for_grass`, `generate_netcdf_file_for_C4_fraction`, `fetch_SYNMAP_land_cover_map_variable`, `generate_netcdf_file_for_Grass_fraction`, `fetch_monthly_mean_air_temperature_data`, `initialize_Grass_Matrix`
