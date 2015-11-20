@@ -2,6 +2,7 @@
 *.bak
 *.m~
 *.xwam
+.project
 .settings
 .classpath
 target
