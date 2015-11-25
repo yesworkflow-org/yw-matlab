@@ -1,5 +1,8 @@
 package org.yesworkflow.matlab;
 
+import java.io.File;
+import java.io.IOException;
+
 import org.yesworkflow.YesWorkflowTestCase;
 import org.yesworkflow.data.UriTemplate;
 import org.yesworkflow.recon.ResourceFinder;
@@ -7,13 +10,15 @@ import org.yesworkflow.recon.ResourceFinder.ResourceRole;
 
 public class TestMatlabResourceFinder extends YesWorkflowTestCase {
 
-    private static String TEST_RESOURCE_DIR = "src/test/resources/org/yesworkflow/matlab/TestMatlabResourceFinder/";
+    private static String TEST_RESOURCE_DIR = "src/test/resources/org/yesworkflow/matlab/tests/TestMatlabResourceFinder/";
+    private String MATLAB_RUN_DIR;
     
     private ResourceFinder finder;
     
     @Override
-    public void setUp() {
+    public void setUp() throws IOException {
         finder = new MatlabResourceFinder();
+        MATLAB_RUN_DIR = new File(".").getCanonicalPath().toString() + "/src/main/resources/examples/C3_C4_mapping/";
     }
     
     private String fileNameOnlyYamlString = 
@@ -197,6 +202,7 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
             finder.findResources("run/", new UriTemplate("inputs/text/{name}.txt"), ResourceRole.INPUT).toString());
     }
     
+    
     public void testYamlFile_PathsWithBase_AllInputs_EmptyBase() throws Exception {
         finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
         assertEquals("[run/inputs/text/infile1.txt, run/inputs/text/infile2.txt, run/inputs/data/infile3.dat, " + 
@@ -228,5 +234,108 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
         finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
         assertEquals("[inputs/text/infile1.txt, inputs/text/infile2.txt]", 
             finder.findResources("run/", new UriTemplate("inputs/text/{name}.txt"), ResourceRole.INPUT).toString());
+    }
+        
+    public void testRunResourceFile_AllInputs() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[inputs/land_cover/SYNMAP_NA_QD.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.1.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.2.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.3.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.4.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.5.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.6.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.7.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.8.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.9.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.10.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.11.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.12.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc]", 
+            finder.findResources(MATLAB_RUN_DIR, new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testRunResourceFile_AirTempInputs() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.1.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.2.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.3.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.4.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.5.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.6.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.7.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.8.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.9.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.10.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.11.nc, " +
+                "inputs/narr_air.2m_monthly/air.2m_monthly_2000_2010_mean.12.nc]",
+            finder.findResources(
+                    MATLAB_RUN_DIR, 
+                    new UriTemplate("inputs/narr_air.2m_monthly/air.2m_monthly_{start_year}_{end_year}_mean.{month}.nc"), 
+                    ResourceRole.INPUT)
+                    .toString());
+    }
+    
+    public void testRunResourceFile_PrecipInputs() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.10.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc, " +
+                "inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc]", 
+            finder.findResources(
+                    MATLAB_RUN_DIR, 
+                    new UriTemplate("inputs/narr_apcp_rescaled_monthly/apcp_monthly_{start_year}_{end_year}_mean.{month}.nc"), 
+                    ResourceRole.INPUT)
+                    .toString());
+    }
+    
+    public void testRunResourceFile_LandCoverInput() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[inputs/land_cover/SYNMAP_NA_QD.nc]", 
+            finder.findResources(MATLAB_RUN_DIR, new UriTemplate("inputs/land_cover/SYNMAP_NA_QD.nc"), ResourceRole.INPUT).toString());
+    }
+    
+    public void testRunResourceFile_C3FractionOutput() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[outputs/SYNMAP_PRESENTVEG_C3Grass_RelaFrac_NA_v2.0.nc]", 
+            finder.findResources(MATLAB_RUN_DIR, new UriTemplate("outputs/SYNMAP_PRESENTVEG_C3Grass_RelaFrac_NA_v2.0.nc"), ResourceRole.OUTPUT).toString());
+    }
+
+    public void testRunResourceFile_C4FractionOutput() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc]", 
+            finder.findResources(MATLAB_RUN_DIR, new UriTemplate("outputs/SYNMAP_PRESENTVEG_C4Grass_RelaFrac_NA_v2.0.nc"), ResourceRole.OUTPUT).toString());
+    }
+
+    public void testRunResourceFile_GrassFractionOutput() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "matlabRunResources.yaml");
+        assertEquals(
+               "[outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc]", 
+            finder.findResources(MATLAB_RUN_DIR, new UriTemplate("outputs/SYNMAP_PRESENTVEG_Grass_Fraction_NA_v2.0.nc"), ResourceRole.OUTPUT).toString());
     }
 }
