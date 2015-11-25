@@ -1,7 +1,5 @@
 package org.yesworkflow.matlab;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -14,7 +12,6 @@ import org.yesworkflow.recon.ResourceFinder;
 
 public class MatlabResourceFinder implements ResourceFinder {
     
-    private Path basePath;
     private Collection<String> matchingURIs;
     private Map<String,Object> runRecords;
     private List<String> inputFiles = null;
@@ -22,6 +19,11 @@ public class MatlabResourceFinder implements ResourceFinder {
 
     @Override
     public MatlabResourceFinder configure(Map<String, Object> config) throws Exception {
+        if (config != null) {
+            for (Map.Entry<String, Object> entry : config.entrySet()) {
+                configure(entry.getKey(), entry.getValue());
+            }
+        }
         return this;
     }
 
@@ -37,7 +39,6 @@ public class MatlabResourceFinder implements ResourceFinder {
     
     @Override
     public Collection<String> findResources(String baseUri, UriTemplate uriTemplate, ResourceRole role) {
-        this.basePath = Paths.get(baseUri);
         matchingURIs = new LinkedHashSet<String>();
         Pattern pattern = uriTemplate.getRegexpPattern();
         
@@ -55,8 +56,12 @@ public class MatlabResourceFinder implements ResourceFinder {
     private void addMatches(String baseUri, Pattern pattern, List<String> resourceURIs,  Collection<String> matchingURIs) {
         if (resourceURIs == null) return;
         for (String uri : resourceURIs) {
-            if (!uri.startsWith(baseUri)) continue;
-            uri = uri.substring(baseUri.length());
+            
+            // strip base from uri if it extends base
+            if (uri.startsWith(baseUri)) {
+                uri = uri.substring(baseUri.length());
+            }
+            
             if (pattern.matcher(uri).matches()) {
                 matchingURIs.add(uri);
             }

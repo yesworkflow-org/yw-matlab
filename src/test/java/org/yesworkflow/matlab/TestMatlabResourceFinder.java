@@ -37,20 +37,24 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
             "- outputs/text/outfile1.txt"   + EOL +
             "- outputs/text/outfile2.txt"   + EOL +
             "- outputs/images/outfile3.png" + EOL;
-    
-    private String relativePathsWithBaseYamlString = 
+
+    private String pathsWithBaseYamlString = 
             "inputFiles:"                       + EOL +
             "- run/inputs/text/infile1.txt"     + EOL +
             "- run/inputs/text/infile2.txt"     + EOL +
             "- run/inputs/data/infile3.dat"     + EOL +
             "- run/inputs/data/infile4.dat"     + EOL +
+            "- /data/tmcphill/infile5.png"      + EOL +
+            "- /data/tmcphill/infile6.png"      + EOL +
+            "- /data/tmcphill/infile7.png"      + EOL +
             ""                                  + EOL +
             "outputFiles:"                      + EOL +
             "- run/outputs/text/outfile1.txt"   + EOL +
             "- run/outputs/text/outfile2.txt"   + EOL +
-            "- run/outputs/images/outfile3.png" + EOL;
-
-    
+            "- run/outputs/images/outfile3.png" + EOL +
+            "- /tmp/tmcphill/3513jj.tmp"        + EOL +
+            "- /tmp/tmcphill/456lfm.tmp"        + EOL +
+            "- /tmp/tmcphill/2235ss.tmp"        + EOL;
     
     public void testYamlString_FileNameOnly_AllInputs() throws Exception {
         finder.configure("yamlstring", fileNameOnlyYamlString);
@@ -158,8 +162,35 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
         assertEquals("[]", finder.findResources("", new UriTemplate("{types}/docs/{name}.txt"), ResourceRole.INPUT_OR_OUTPUT).toString());
     }
     
-    public void testYamlString_RelativePathsWithBase_AllInputs() throws Exception {
-        finder.configure("yamlstring", relativePathsWithBaseYamlString);
+    public void testYamlString_PathsWithBase_AllInputs_EmptyBase() throws Exception {
+        finder.configure("yamlstring", pathsWithBaseYamlString);
+        assertEquals("[run/inputs/text/infile1.txt, run/inputs/text/infile2.txt, run/inputs/data/infile3.dat, " + 
+                     "run/inputs/data/infile4.dat, /data/tmcphill/infile5.png, /data/tmcphill/infile6.png, /data/tmcphill/infile7.png]", 
+            finder.findResources("", new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testYamlString_PathsWithBase_AllInputs_RelativeBase() throws Exception {
+        finder.configure("yamlstring", pathsWithBaseYamlString);
+        assertEquals("[inputs/text/infile1.txt, inputs/text/infile2.txt, inputs/data/infile3.dat, inputs/data/infile4.dat, " +
+                     "/data/tmcphill/infile5.png, /data/tmcphill/infile6.png, /data/tmcphill/infile7.png]",
+            finder.findResources("run/", new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testYamlString_PathsWithBase_AllInputs_AbsoluteBase() throws Exception {
+        finder.configure("yamlstring", pathsWithBaseYamlString);
+        assertEquals("[run/inputs/text/infile1.txt, run/inputs/text/infile2.txt, run/inputs/data/infile3.dat, " + 
+                     "run/inputs/data/infile4.dat, tmcphill/infile5.png, tmcphill/infile6.png, tmcphill/infile7.png]",
+            finder.findResources("/data/", new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testYamlString_PathsWithBase_DataInput_AbsoluteBase() throws Exception {
+        finder.configure("yamlstring", pathsWithBaseYamlString);
+        assertEquals("[/data/tmcphill/infile5.png, /data/tmcphill/infile6.png, /data/tmcphill/infile7.png]",
+            finder.findResources("", new UriTemplate("/data/{path}"), ResourceRole.INPUT).toString());
+    }
+    
+    public void testYamlString_PathsWithBase_AllRelativeTextInputs() throws Exception {
+        finder.configure("yamlstring", pathsWithBaseYamlString);
         assertEquals("[inputs/text/infile1.txt, inputs/text/infile2.txt]", 
             finder.findResources("run/", new UriTemplate("inputs/text/{name}.txt"), ResourceRole.INPUT).toString());
     }
