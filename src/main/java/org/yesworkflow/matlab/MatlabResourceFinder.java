@@ -1,5 +1,8 @@
 package org.yesworkflow.matlab;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -30,8 +33,9 @@ public class MatlabResourceFinder implements ResourceFinder {
     @Override
     public MatlabResourceFinder configure(String key, Object value) throws Exception {
         if (key.equalsIgnoreCase("yamlstring")) {
-            String yamlString = (String)value;
-            parseYamlString(yamlString);
+            parseYamlString((String)value);
+        } else if (key.equalsIgnoreCase("yamlfile")) {
+           parseYamlFile((String)value);
         }
         
         return this;
@@ -45,7 +49,7 @@ public class MatlabResourceFinder implements ResourceFinder {
         if (role == ResourceRole.INPUT || role == ResourceRole.INPUT_OR_OUTPUT) {
             addMatches(baseUri, pattern, inputFiles, matchingURIs);
         }
-
+        
         if (role == ResourceRole.OUTPUT || role == ResourceRole.INPUT_OR_OUTPUT) {
             addMatches(baseUri, pattern, outputFiles, matchingURIs);
         }
@@ -70,8 +74,21 @@ public class MatlabResourceFinder implements ResourceFinder {
     
     @SuppressWarnings("unchecked")
     private void parseYamlString(String yamlString) {
-        runRecords = (Map<String,Object>) (new Yaml()).load(yamlString);;
+        runRecords = (Map<String,Object>) (new Yaml()).load(yamlString);
+        extractRunRecords();
+    }
+    
+    @SuppressWarnings("unchecked")
+    private void parseYamlFile(String path) throws FileNotFoundException {
+        InputStream stream = new FileInputStream(path);
+        runRecords = (Map<String,Object>) (new Yaml()).load(stream);
+        extractRunRecords();
+    }
+    
+    @SuppressWarnings("unchecked")
+    private void extractRunRecords() {
         inputFiles = (List<String>) runRecords.get("inputFiles");
         outputFiles = (List<String>) runRecords.get("outputFiles");
-   }
+    }
+    
 }

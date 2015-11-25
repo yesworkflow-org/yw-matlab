@@ -7,6 +7,8 @@ import org.yesworkflow.recon.ResourceFinder.ResourceRole;
 
 public class TestMatlabResourceFinder extends YesWorkflowTestCase {
 
+    private static String TEST_RESOURCE_DIR = "src/test/resources/org/yesworkflow/matlab/TestMatlabResourceFinder/";
+    
     private ResourceFinder finder;
     
     @Override
@@ -191,6 +193,39 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
     
     public void testYamlString_PathsWithBase_AllRelativeTextInputs() throws Exception {
         finder.configure("yamlstring", pathsWithBaseYamlString);
+        assertEquals("[inputs/text/infile1.txt, inputs/text/infile2.txt]", 
+            finder.findResources("run/", new UriTemplate("inputs/text/{name}.txt"), ResourceRole.INPUT).toString());
+    }
+    
+    public void testYamlFile_PathsWithBase_AllInputs_EmptyBase() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
+        assertEquals("[run/inputs/text/infile1.txt, run/inputs/text/infile2.txt, run/inputs/data/infile3.dat, " + 
+                     "run/inputs/data/infile4.dat, /data/tmcphill/infile5.png, /data/tmcphill/infile6.png, /data/tmcphill/infile7.png]", 
+            finder.findResources("", new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testYamlFile_PathsWithBase_AllInputs_RelativeBase() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
+        assertEquals("[inputs/text/infile1.txt, inputs/text/infile2.txt, inputs/data/infile3.dat, inputs/data/infile4.dat, " +
+                     "/data/tmcphill/infile5.png, /data/tmcphill/infile6.png, /data/tmcphill/infile7.png]",
+            finder.findResources("run/", new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testYamlFile_PathsWithBase_AllInputs_AbsoluteBase() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
+        assertEquals("[run/inputs/text/infile1.txt, run/inputs/text/infile2.txt, run/inputs/data/infile3.dat, " + 
+                     "run/inputs/data/infile4.dat, tmcphill/infile5.png, tmcphill/infile6.png, tmcphill/infile7.png]",
+            finder.findResources("/data/", new UriTemplate("{path}"), ResourceRole.INPUT).toString());
+    }
+
+    public void testYamlFile_PathsWithBase_DataInput_AbsoluteBase() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
+        assertEquals("[/data/tmcphill/infile5.png, /data/tmcphill/infile6.png, /data/tmcphill/infile7.png]",
+            finder.findResources("", new UriTemplate("/data/{path}"), ResourceRole.INPUT).toString());
+    }
+    
+    public void testYamlFile_PathsWithBase_AllRelativeTextInputs() throws Exception {
+        finder.configure("yamlfile", TEST_RESOURCE_DIR + "ioresources.yaml");
         assertEquals("[inputs/text/infile1.txt, inputs/text/infile2.txt]", 
             finder.findResources("run/", new UriTemplate("inputs/text/{name}.txt"), ResourceRole.INPUT).toString());
     }

@@ -1,0 +1,16 @@
+inputFiles:
+- run/inputs/text/infile1.txt
+- run/inputs/text/infile2.txt
+- run/inputs/data/infile3.dat
+- run/inputs/data/infile4.dat
+- /data/tmcphill/infile5.png
+- /data/tmcphill/infile6.png
+- /data/tmcphill/infile7.png
+ 
+outputFiles:
+- run/outputs/text/outfile1.txt
+- run/outputs/text/outfile2.txt
+- run/outputs/images/outfile3.png
+- /tmp/tmcphill/3513jj.tmp
+- /tmp/tmcphill/456lfm.tmp
+- /tmp/tmcphill/2235ss.tmp
