@@ -16,6 +16,10 @@ import org.yesworkflow.recon.ResourceFinder;
 
 public class MatlabResourceFinder implements ResourceFinder {
     
+    private static String INPUTS_LIST_NAME = "inputs";
+    private static String OUTPUTS_LIST_NAME = "outputs";
+            
+    
     private Collection<String> matchingUris;
     private Map<String,Object> runRecords;
     private List<String> inputFiles = null;
@@ -102,8 +106,8 @@ public class MatlabResourceFinder implements ResourceFinder {
     
     @SuppressWarnings("unchecked")
     private void extractRunRecords() {
-        inputFiles = (List<String>) runRecords.get("inputFiles");
-        outputFiles = (List<String>) runRecords.get("outputFiles");
+        inputFiles = (List<String>) runRecords.get(INPUTS_LIST_NAME);
+        outputFiles = (List<String>) runRecords.get(OUTPUTS_LIST_NAME);
     }
     
 }

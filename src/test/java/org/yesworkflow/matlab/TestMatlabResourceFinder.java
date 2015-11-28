@@ -21,31 +21,31 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
     }
     
     private String fileNameOnlyYamlString = 
-            "inputFiles:"       + EOL +
+            "inputs:"           + EOL +
             "- infile1.txt"     + EOL +
             "- infile2.txt"     + EOL +
             "- infile3.dat"     + EOL +
             "- infile4.dat"     + EOL +
             ""                  + EOL +
-            "outputFiles:"      + EOL +
+            "outputs:"          + EOL +
             "- outfile1.txt"    + EOL +
             "- outfile2.txt"    + EOL +
             "- outfile3.png"    + EOL;
 
     private String relativePathsYamlString = 
-            "inputFiles:"       + EOL +
+            "inputs:"                       + EOL +
             "- inputs/text/infile1.txt"     + EOL +
             "- inputs/text/infile2.txt"     + EOL +
             "- inputs/data/infile3.dat"     + EOL +
             "- inputs/data/infile4.dat"     + EOL +
             ""                              + EOL +
-            "outputFiles:"                  + EOL +
+            "outputs:"                      + EOL +
             "- outputs/text/outfile1.txt"   + EOL +
             "- outputs/text/outfile2.txt"   + EOL +
             "- outputs/images/outfile3.png" + EOL;
 
     private String pathsWithBaseYamlString = 
-            "inputFiles:"                       + EOL +
+            "inputs:"                           + EOL +
             "- run/inputs/text/infile1.txt"     + EOL +
             "- run/inputs/text/infile2.txt"     + EOL +
             "- run/inputs/data/infile3.dat"     + EOL +
@@ -54,7 +54,7 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
             "- /data/tmcphill/infile6.png"      + EOL +
             "- /data/tmcphill/infile7.png"      + EOL +
             ""                                  + EOL +
-            "outputFiles:"                      + EOL +
+            "outputs:"                          + EOL +
             "- run/outputs/text/outfile1.txt"   + EOL +
             "- run/outputs/text/outfile2.txt"   + EOL +
             "- run/outputs/images/outfile3.png" + EOL +

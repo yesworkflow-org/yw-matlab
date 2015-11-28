@@ -1,4 +1,4 @@
-inputFiles:
+inputs:
 - run/inputs/text/infile1.txt
 - run/inputs/text/infile2.txt
 - run/inputs/data/infile3.dat
@@ -7,7 +7,7 @@ inputFiles:
 - /data/tmcphill/infile6.png
 - /data/tmcphill/infile7.png
  
-outputFiles:
+outputs:
 - run/outputs/text/outfile1.txt
 - run/outputs/text/outfile2.txt
 - run/outputs/images/outfile3.png
