@@ -19,7 +19,6 @@ public class MatlabResourceFinder implements ResourceFinder {
     private static String INPUTS_LIST_NAME = "inputs";
     private static String OUTPUTS_LIST_NAME = "outputs";
             
-    
     private Collection<String> matchingUris;
     private Map<String,Object> runRecords;
     private List<String> inputFiles = null;
@@ -35,12 +34,15 @@ public class MatlabResourceFinder implements ResourceFinder {
         return this;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public MatlabResourceFinder configure(String key, Object value) throws Exception {
         if (key.equalsIgnoreCase("yamlstring")) {
             parseYamlString((String)value);
-        } else if (key.equalsIgnoreCase("yamlfile")) {
+        } else if (key.equalsIgnoreCase("exportfile")) {
            parseYamlFile((String)value);
+        } else if (key.equalsIgnoreCase("matlab")) {
+            configure((Map<String,Object>)value);
         }
         return this;
     }
