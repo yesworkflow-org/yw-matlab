@@ -1,7 +1,5 @@
 package org.yesworkflow.matlab;
 
-import java.io.IOException;
-
 import org.yesworkflow.YesWorkflowTestCase;
 import org.yesworkflow.config.YWConfiguration;
 import org.yesworkflow.data.UriTemplate;
@@ -17,9 +15,9 @@ public class TestMatlabResourceFinder extends YesWorkflowTestCase {
     private ResourceFinder finder;
     
     @Override
-    public void setUp() throws IOException {
+    public void setUp() throws Exception {
         config = new YWConfiguration();
-        finder = new MatlabResourceFinder();
+        finder = new MatlabResourceFinder().configure("matchonce", "true");
     }
     
     private String fileNameOnlyYamlString = 
