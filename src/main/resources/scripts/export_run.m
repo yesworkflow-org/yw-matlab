@@ -11,9 +11,9 @@ function export_run()
 
     % use properties or default values to configure export
     run_base_dir = get_property_or_default(properties, 'recon.rundir', '.');
-    provdir = get_property_or_default(properties, 'matlab.provdir', '.');
-    runid = get_property_or_default(properties, 'matlab.runid', '1');
-    export_file = get_property_or_default(properties, 'matlab.exportfile', 'run.yaml');
+    provdir = get_property_or_default(properties, 'recon.matlab.provdir', '.');
+    runid = get_property_or_default(properties, 'recon.matlab.runid', '1');
+    export_file = get_property_or_default(properties, 'recon.matlab.exportfile', 'run.yaml');
 
     % load the execution workspace for the run
     executionWorkspaceFile = [provdir '/runs/' runid '/' runid '.mat'];
