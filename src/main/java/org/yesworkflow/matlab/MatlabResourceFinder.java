@@ -23,7 +23,8 @@ public class MatlabResourceFinder implements ResourceFinder {
     private Map<String,Object> runRecords;
     private List<String> inputFiles = null;
     private List<String> outputFiles = null;
-
+    private boolean findResourceOnce = false;
+    
     @Override
     public MatlabResourceFinder configure(Map<String, Object> config) throws Exception {
         if (config != null) {
@@ -43,7 +44,10 @@ public class MatlabResourceFinder implements ResourceFinder {
            parseYamlFile((String)value);
         } else if (key.equalsIgnoreCase("matlab")) {
             configure((Map<String,Object>)value);
+        } else if (key.equalsIgnoreCase("matchonce")) {
+            findResourceOnce = ((String)value).equalsIgnoreCase("true");
         }
+
         return this;
     }
     
@@ -70,7 +74,10 @@ public class MatlabResourceFinder implements ResourceFinder {
                 usedUris.add(uri);
             }
         }
-        resourceUris.removeAll(usedUris);
+        
+        if (findResourceOnce) {
+            resourceUris.removeAll(usedUris);
+        }
     }
 
     public Collection<String> findUnmatchedResources(String baseUri, ResourceRole role) {
@@ -90,7 +97,9 @@ public class MatlabResourceFinder implements ResourceFinder {
             String unbasedUri = (uri.startsWith(baseUri)) ? uri.substring(baseUri.length()) : uri;
             nonMatchingUris.add(unbasedUri);
         }
-        resourceUris.clear();
+        if (findResourceOnce) {
+            resourceUris.clear();
+        }
     }
     
     @SuppressWarnings("unchecked")
