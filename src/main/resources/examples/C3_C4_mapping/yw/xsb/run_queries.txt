@@ -1,4 +1,4 @@
-[xsb_configuration loaded, cpu time used: 0.0010 seconds]
+[xsb_configuration loaded]
 [sysinitrc loaded]
 [xsbbrat loaded]
 
@@ -12,7 +12,7 @@ yes
 | ?- [extractfacts loaded]
 
 yes
-| ?- [modelfacts loaded, cpu time used: 0.0010 seconds]
+| ?- [modelfacts loaded]
 
 yes
 | ?- [reconfacts loaded]
@@ -38,15 +38,15 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 eq2(ProgramName) - What are the names of all program blocks in the script?
 ---------------------------------------------------------------------------------------------------------------------------
+eq2(fetch_SYNMAP_land_cover_map_variable)
+eq2(generate_netcdf_file_for_Grass_fraction)
+eq2(fetch_monthly_mean_air_temperature_data)
 eq2(initialize_Grass_Matrix)
 eq2(generate_netcdf_file_for_C3_fraction)
 eq2(fetch_monthly_mean_precipitation_data)
 eq2(C3_C4_map_present_NA)
 eq2(examine_pixels_for_grass)
 eq2(generate_netcdf_file_for_C4_fraction)
-eq2(fetch_SYNMAP_land_cover_map_variable)
-eq2(generate_netcdf_file_for_Grass_fraction)
-eq2(fetch_monthly_mean_air_temperature_data)
 
 yes
 | ?- 
@@ -235,6 +235,10 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 rq1(InputFile) - What input files were used to compose the rain matrix?
 ---------------------------------------------------------------------------------------------------------------------------
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc)
+rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.9.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.2.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.6.nc)
@@ -243,10 +247,6 @@ rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.3.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.7.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.11.nc)
 rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.4.nc)
-rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.8.nc)
-rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.1.nc)
-rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.12.nc)
-rq1(inputs/narr_apcp_rescaled_monthly/apcp_monthly_2000_2010_mean.5.nc)
 
 yes
 | ?- 
@@ -274,18 +274,18 @@ yes
 ---------------------------------------------------------------------------------------------------------------------------
 rq5(Month) - What months of the year do the mean_airtemp input files correspond to?
 ---------------------------------------------------------------------------------------------------------------------------
+rq5(8)
 rq5(9)
 rq5(10)
 rq5(5)
-rq5(3)
 rq5(11)
+rq5(3)
 rq5(4)
-rq5(12)
 rq5(2)
+rq5(12)
 rq5(6)
-rq5(7)
 rq5(1)
-rq5(8)
+rq5(7)
 
 yes
 | ?- 
