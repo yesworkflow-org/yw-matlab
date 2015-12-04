@@ -1,9 +1,19 @@
 YesWorkflow-MATLAB
 ==================
 
-The __yw-matlab__ module will contain [YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes) (YW) modules and command line tools for interacting with the [DataONE MATLAB RunManager](https://github.com/DataONEorg/matlab-dataone). These tools will make the RunManager's records of script runs and data provenance available to YW so that this retrospective provenance information can be queried in terms of, and in combination with, the prospective provenance revealed by YW annotations in the MATLAB scripts.
+The __yw-matlab__ module contains a [YesWorkflow](https://github.com/yesworkflow-org/yw-prototypes) (YW) module and command line tools for interacting with the [DataONE MATLAB RunManager](https://github.com/DataONEorg/matlab-dataone). These tools make the RunManager's records of script runs and data provenance available to YW so that this retrospective provenance information can be queried in terms of, and in combination with, the prospective provenance revealed by YW annotations in the MATLAB scripts.
 
 This repository also contains example MATLAB scripts marked up with YW annotations, the products of running YW on the scripts, and example prospective and retrospective queries of the provenance records jointly created by YW and the DataONE RunManager for runs of each script.
+
+#### Problems solved by this package
+
+The key feature currently implemented by this package is the ability to use the RunManager's authoritative list of input and output files for a script run when reconstructing the detailed provenance of a script's outputs using YesWorkflow.
+
+This capability promises to be superior to YW's default behavior of searching the file system for files that match the URI templates declared for `@IN`and `@OUT` ports in the script when reconstructing script runs.  An example of a situation where the default approach to reconstructing runs will fail is when the outputs from multiple runs of a script intermingle in the same directory or a single directory tree. In such situations the core, language-neutral implementation of YesWorkflow currently cannot determine which files are associated with a particular run. Because the MATLAB RunManager records all the files that are read or written by a run of MATLAB script, the extended version of YW that uses this information does not share this weakness.
+
+YesWorkflow extracts variable values from the file paths that match the URI templates declared via YW annotations in the same manner for MATLAB RunManager recorded file paths as for files discovered on the file system by the default reconstruction mechanism.  Consequently both approaches to run resource discovery support the same kinds of queries of the retrospective provenance.
+
+
 
 #### Layout of repository
 
@@ -11,6 +21,8 @@ Directory | Description
 ----------|------------
 [src/main/resources/scripts](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/scripts) | MATLAB scripts for working with the RunManager and exporting provenance records for importing into YesWorkflow.
 [src/main/resources/examples](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/resources/examples) | Example scripts and associated data files, provenance records, and results of prospective and retrospective provenance queries for runs of each script.
+[src/main/java/org/yesworkflow/matlab](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/main/java/org/yesworkflow/matlab) | Java package that extends YesWorkflow with the ability to import script run records exported from the MATLAB RunManager.
+[src/test/java/org/yesworkflow/matlab](https://github.com/yesworkflow-org/yw-matlab/tree/master/src/test/java/org/yesworkflow/matlab) | Unit tests for the Java classes in the `org.yesworkflow.matlab` package.
 
 
 Examples
